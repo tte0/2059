@@ -154,7 +154,7 @@ public class TileBoard : MonoBehaviour
             GameManager.Instance.GameOver();
         }
         else{
-            CheckForNewBiggestTile();
+            StartCoroutine(CheckForNewBiggestTile());
         }
 
         waiting = false;
@@ -193,20 +193,28 @@ public class TileBoard : MonoBehaviour
         return true;
     }
 
-    private void CheckForNewBiggestTile(){
+    private IEnumerator CheckForNewBiggestTile(){
         //after every move check if the biggest tile has changed
-        Tile newBiggestTile = tiles[0];
-        foreach (var tile in tiles)
-        {
-            if(tile.state.number > newBiggestTile.state.number){
-                newBiggestTile = tile;
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("Checking for new biggest tile");
+        TileCell newBiggestTileCell = grid.GetCell(0,0);
+        //iterate through all tiles to find the biggest one,
+        //if the new biggest tile is bigger than the current biggest tile, update the biggest tile
+        for(int i = 0; i < grid.Size; i++){
+            for(int j = 0; j < grid.Size; j++){
+                TileCell tile = grid.GetCell(i,j);
+                if(tile == null)continue;
+                if(newBiggestTileCell == null)newBiggestTileCell = tile;
+                else if(tile.tile.state.number > newBiggestTileCell.tile.state.number)newBiggestTileCell = tile;
             }
         }
         
-        if(biggestTile == null || newBiggestTile.state.number > biggestTile.state.number){
-            biggestTile = newBiggestTile;
+        if(biggestTile == null || newBiggestTileCell.tile.state.number > biggestTile.state.number){
+            biggestTile = newBiggestTileCell.tile;
             GameManager.Instance.ManageNewBiggestTile(biggestTile);
         }
+
+        yield return null;
     }
 
 }

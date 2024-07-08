@@ -101,6 +101,6 @@ public class GameManager : MonoBehaviour
 
 
     public void ManageNewBiggestTile(Tile __biggestTile){
-
+        Debug.Log("New biggest tile: " + __biggestTile.state.number);
     }
 }
