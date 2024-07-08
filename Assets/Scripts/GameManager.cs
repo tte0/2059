@@ -99,4 +99,8 @@ public class GameManager : MonoBehaviour
         return PlayerPrefs.GetInt("hiscore", 0);
     }
 
+
+    public void ManageNewBiggestTile(Tile __biggestTile){
+
+    }
 }
