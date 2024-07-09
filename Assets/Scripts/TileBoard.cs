@@ -10,7 +10,7 @@ public class TileBoard : MonoBehaviour
     private TileGrid grid;
     private List<Tile> tiles;
     private bool waiting;
-    private Tile biggestTile;
+    private int biggestTileIndex = 0;
 
     private void Awake()
     {
@@ -196,22 +196,18 @@ public class TileBoard : MonoBehaviour
     private IEnumerator CheckForNewBiggestTile(){
         //after every move check if the biggest tile has changed
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("Checking for new biggest tile");
-        TileCell newBiggestTileCell = grid.GetCell(0,0);
-        //iterate through all tiles to find the biggest one,
-        //if the new biggest tile is bigger than the current biggest tile, update the biggest tile
-        for(int i = 0; i < grid.Size; i++){
-            for(int j = 0; j < grid.Size; j++){
+        int mx=0;
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
                 TileCell tile = grid.GetCell(i,j);
-                if(tile == null)continue;
-                if(newBiggestTileCell == null)newBiggestTileCell = tile;
-                else if(tile.tile.state.number > newBiggestTileCell.tile.state.number)newBiggestTileCell = tile;
+                if(tile == null || tile.Empty)continue;
+                //Debug.Log("Tile number: " + tile.tile.state.number);
+                if(tile.tile.state.number > mx)mx = tile.tile.state.number;
             }
         }
-        
-        if(biggestTile == null || newBiggestTileCell.tile.state.number > biggestTile.state.number){
-            biggestTile = newBiggestTileCell.tile;
-            GameManager.Instance.ManageNewBiggestTile(biggestTile);
+        if(mx > biggestTileIndex){
+            biggestTileIndex = mx;
+            GameManager.Instance.ManageNewBiggestTile(mx);
         }
 
         yield return null;
