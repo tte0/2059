@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -10,12 +11,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasGroup gameOver;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI hiscoreText;
+    [SerializeField] private List<GameObject> popups;
+    private GameObject canvas;
+    public bool waiting;
 
     private int score;
     public int Score => score;
 
     private void Awake()
     {
+        canvas = GameObject.Find("Canvas");
         if (Instance != null) {
             DestroyImmediate(gameObject);
         } else {
@@ -99,8 +104,10 @@ public class GameManager : MonoBehaviour
         return PlayerPrefs.GetInt("hiscore", 0);
     }
 
-
     public void ManageNewBiggestTile(int __biggestTileIndex){
         Debug.Log("New biggest tile: " + __biggestTileIndex);
+        int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
+        //Debug.Log("Popup index: " + popupIndex);
+        GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
     }
 }

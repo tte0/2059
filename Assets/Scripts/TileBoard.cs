@@ -9,7 +9,6 @@ public class TileBoard : MonoBehaviour
 
     private TileGrid grid;
     private List<Tile> tiles;
-    private bool waiting;
     private int biggestTileIndex = 0;
 
     private void Awake()
@@ -41,7 +40,7 @@ public class TileBoard : MonoBehaviour
 
     private void Update()
     {
-        if (!waiting)
+        if (!GameManager.Instance.waiting)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
                 Move(Vector2Int.up, 0, 1, 1, 1);
@@ -138,7 +137,7 @@ public class TileBoard : MonoBehaviour
 
     private IEnumerator WaitForChanges()
     {
-        waiting = true;
+        GameManager.Instance.waiting = true;
 
         yield return new WaitForSeconds(0.1f);
 
@@ -156,8 +155,6 @@ public class TileBoard : MonoBehaviour
         else{
             StartCoroutine(CheckForNewBiggestTile());
         }
-
-        waiting = false;
     }
 
     public bool CheckForGameOver()
@@ -208,6 +205,9 @@ public class TileBoard : MonoBehaviour
         if(mx > biggestTileIndex){
             biggestTileIndex = mx;
             GameManager.Instance.ManageNewBiggestTile(mx);
+        }
+        else{
+            GameManager.Instance.waiting = false;
         }
 
         yield return null;
