@@ -109,5 +109,13 @@ public class GameManager : MonoBehaviour
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
         GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
+        newPopup.name = "Popup";
+    }
+
+    public void ClosePopup(){
+        GameObject popup = GameObject.Find("Popup");
+        if(popup != null)Destroy(popup);
+        else Debug.Log("Popup not found");
+        waiting=false;
     }
 }
