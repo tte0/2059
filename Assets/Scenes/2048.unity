@@ -1959,6 +1959,8 @@ MonoBehaviour:
   hiscoreText: {fileID: 67294057}
   popups:
   - {fileID: 6918235476871980301, guid: c9cf0d8c11e8fd7ca8c9453484067e4b, type: 3}
+  - {fileID: 6918235476871980301, guid: c9cf0d8c11e8fd7ca8c9453484067e4b, type: 3}
+  - {fileID: 6918235476871980301, guid: c9cf0d8c11e8fd7ca8c9453484067e4b, type: 3}
   waiting: 0
 --- !u!4 &1601929140
 Transform:
