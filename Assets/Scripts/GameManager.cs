@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hiscoreText;
     [SerializeField] private List<GameObject> popups;
     private GameObject canvas;
-    public bool waiting;
+    public bool waiting=true;
 
     private int score;
     public int Score => score;

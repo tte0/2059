@@ -17,6 +17,10 @@ public class TileBoard : MonoBehaviour
         tiles = new List<Tile>(16);
     }
 
+    private void Start(){
+        StartCoroutine(CheckForNewBiggestTile());
+    }
+
     public void ClearBoard()
     {
         foreach (var cell in grid.cells) {
