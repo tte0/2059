@@ -10,12 +10,12 @@ public class Tile : MonoBehaviour
     public bool locked { get; set; }
 
     private Image background;
-    private TextMeshProUGUI text;
+    private Image image;
 
     private void Awake()
     {
         background = GetComponent<Image>();
-        text = GetComponentInChildren<TextMeshProUGUI>();
+        image = GetComponentInChildren<Image>();
     }
 
     public void SetState(TileState state)
@@ -23,8 +23,7 @@ public class Tile : MonoBehaviour
         this.state = state;
 
         background.color = state.backgroundColor;
-        text.color = state.textColor;
-        text.text = state.number.ToString();
+        image = state.image;
     }
 
     public void Spawn(TileCell cell)
