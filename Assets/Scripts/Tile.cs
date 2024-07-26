@@ -9,21 +9,19 @@ public class Tile : MonoBehaviour
     public TileCell cell { get; private set; }
     public bool locked { get; set; }
 
-    private Image background;
     private Image image;
 
     private void Awake()
     {
-        background = GetComponent<Image>();
-        image = GetComponentInChildren<Image>();
+        image = GetComponent<Image>();
     }
 
     public void SetState(TileState state)
     {
         this.state = state;
 
-        background.color = state.backgroundColor;
-        image = state.image;
+        image.color = state.backgroundColor;
+        image.sprite = state.sprite;
     }
 
     public void Spawn(TileCell cell)

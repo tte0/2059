@@ -7,5 +7,5 @@ public class TileState : ScriptableObject
 {
     public int number;
     public Color backgroundColor;
-    public Image image;
+    public Sprite sprite;
 }

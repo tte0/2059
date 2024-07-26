@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da7eb619f13b9e438623a1594a8013d, type: 3}
   m_Name: 32
   m_EditorClassIdentifier: 
-  backgroundColor: {r: 0.96862745, g: 0.4862745, b: 0.37254903, a: 1}
-  textColor: {r: 0.9764706, g: 0.9647059, b: 0.9490196, a: 1}
   number: 32
+  backgroundColor: {r: 0.96862745, g: 0.4862745, b: 0.37254903, a: 1}
+  sprite: {fileID: 21300000, guid: 9221ab6a41adb3d1ab51b238b98ef00c, type: 3}
