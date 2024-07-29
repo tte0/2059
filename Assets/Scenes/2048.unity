@@ -1927,12 +1927,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 932753464}
     m_Modifications:
     - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 976074414}
     - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: changeToMainMenu
+      value: quitWithExitCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 2832928076649660212, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_Name

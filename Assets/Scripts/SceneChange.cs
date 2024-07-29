@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
@@ -22,5 +23,10 @@ public class SceneChange : MonoBehaviour
     public void changeToGame(){
         SceneManager.LoadScene(_sceneGame);
     }
-
+    public void quitWithExitCode(int exitcode){
+        Application.Quit(exitcode);
+        #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;    
+        #endif
+    }
 }

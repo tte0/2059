@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 8
   m_EditorClassIdentifier: 
   number: 8
-  backgroundColor: {r: 0.9529412, g: 0.69803923, b: 0.47843137, a: 1}
-  sprite: {fileID: 21300000, guid: 0d307c6997752cdbaae72d0cc172be98, type: 3}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: 21300000, guid: d8a1807e60072096c80c1a715070c279, type: 3}
