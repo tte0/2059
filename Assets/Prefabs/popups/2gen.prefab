@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -50}
-  m_SizeDelta: {x: 450, y: 300}
+  m_AnchoredPosition: {x: -200, y: -50}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7634130019108821788
 CanvasRenderer:
@@ -199,7 +199,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.
+  m_text: "Gen: Gen, belirli bir proteini olu\u015Fturmak veya belirli bir i\u015Flevi
+    yerine getirmek i\xE7in talimatlar i\xE7eren bir DNA par\xE7as\u0131d\u0131r.
+    Bir organizman\u0131n \xF6zelliklerini belirleyen belirli bir dizide d\xFCzenlenmi\u015F
+    \xE7oklu n\xFCkleotidlerden olu\u015Fur. Genler kal\u0131t\u0131m\u0131n temel
+    birimleridir ve ebeveynlerden yavrulara aktar\u0131l\u0131r."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -226,15 +230,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
