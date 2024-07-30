@@ -109,9 +109,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("New biggest tile: " + __biggestTileIndex);
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
-        if(ispopup){
+        if(Settings.ispopup){
             GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
             newPopup.name = "Popup";
+        }
+        else{
+            waiting=false;
         }
     }
 }
