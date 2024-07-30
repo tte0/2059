@@ -141,8 +141,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: cfa7aa5ec3edee0aba4f2a0ce19f9165, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.99275655, b: 0.6650944, a: 1}
+  m_Color: {r: 0.6666667, g: 1, b: 0.67058825, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -633,9 +633,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "H\xFCcre: H\xFCcre, canl\u0131 organizmalar\u0131n temel yap\u0131sal
-    ve i\u015Flevsel birimidir. Organelleri, DNA'y\u0131 ve di\u011Fer biyomolek\xFClleri
-    i\xE7eren k\xFC\xE7\xFCk, zara ba\u011Fl\u0131 bir b\xF6lmedir. H\xFCcreler ya\u015Fam\u0131n
+  m_text: "H\xFCcre, canl\u0131 organizmalar\u0131n temel yap\u0131sal ve i\u015Flevsel
+    birimidir. Organelleri, DNA'y\u0131 ve di\u011Fer biyomolek\xFClleri i\xE7eren
+    k\xFC\xE7\xFCk, zara ba\u011Fl\u0131 bir b\xF6lmedir. H\xFCcreler ya\u015Fam\u0131n
     yap\u0131 ta\u015Flar\u0131d\u0131r ve yap\u0131lar\u0131 ve i\u015Flevleri bir
     organizman\u0131n hayatta kalmas\u0131 ve b\xFCy\xFCmesi i\xE7in \xE7ok \xF6nemlidir.
     H\xFCcreler, sinir h\xFCcreleri veya kas h\xFCcreleri gibi belirli i\u015Flevleri

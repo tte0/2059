@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: cfa7aa5ec3edee0aba4f2a0ce19f9165, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.99275655, b: 0.6650944, a: 1}
+  m_Color: {r: 0.6666667, g: 1, b: 0.67058825, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -290,12 +290,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sistem: Sistem, belirli bir i\u015Flevi veya i\u015Flevler k\xFCmesini
-    yerine getirmek i\xE7in birlikte \xE7al\u0131\u015Fan bir grup organd\u0131r.
-    Birden fazla organ\u0131n homeostaz\u0131 koruyan ve bir organizman\u0131n hayatta
-    kalmas\u0131n\u0131 sa\u011Flayan bir sistem olu\u015Fturmak i\xE7in bir araya
-    geldi\u011Fi, organ\u0131n \xFCzerinde bir organizasyon seviyesidir. Sistemlere
-    \xF6rnek olarak dola\u015F\u0131m, solunum ve sinir sistemleri verilebilir."
+  m_text: "Sistem, belirli bir i\u015Flevi veya i\u015Flevler k\xFCmesini yerine
+    getirmek i\xE7in birlikte \xE7al\u0131\u015Fan bir grup organd\u0131r. Birden
+    fazla organ\u0131n homeostaz\u0131 koruyan ve bir organizman\u0131n hayatta kalmas\u0131n\u0131
+    sa\u011Flayan bir sistem olu\u015Fturmak i\xE7in bir araya geldi\u011Fi, organ\u0131n
+    \xFCzerinde bir organizasyon seviyesidir. Sistemlere \xF6rnek olarak dola\u015F\u0131m,
+    solunum ve sinir sistemleri verilebilir."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
