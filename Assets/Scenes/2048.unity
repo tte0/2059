@@ -479,7 +479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 286}
+  m_AnchoredPosition: {x: 250, y: 250}
   m_SizeDelta: {x: 128, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &132951618
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Terimleri birle\u015Ftir, <b>Organizma</b>ya ula\u015F!"
+  m_text: "Yap\u0131ta\u015Flar\u0131 birle\u015Ftir, <b>Organizma</b>ya ula\u015F!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fde657b4bd8e9e74aa77b77008cad75d, type: 2}
   m_sharedMaterial: {fileID: 4336211340261206716, guid: fde657b4bd8e9e74aa77b77008cad75d, type: 2}
@@ -2167,6 +2167,7 @@ MonoBehaviour:
   - {fileID: 590817339791297422, guid: b73b83756228bc0799cf38d1ff1ddcfb, type: 3}
   - {fileID: 3590592736484746632, guid: d215fc410d379d7768316cb0810e52e2, type: 3}
   waiting: 1
+  ispopup: 1
 --- !u!4 &1601929140
 Transform:
   m_ObjectHideFlags: 0
