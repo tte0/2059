@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 250, y: -50}
-  m_SizeDelta: {x: 450, y: 300}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7847524066526988169
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d1aa984b5fe7be27b0408a1c783aca3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad45b6ea83c972f0c85d13677ec7e726, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Tile Unlocked!
+  m_text: "Yeni Terim A\xE7\u0131ld\u0131!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -243,8 +243,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -50}
-  m_SizeDelta: {x: 450, y: 300}
+  m_AnchoredPosition: {x: -200, y: -50}
+  m_SizeDelta: {x: 550, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3201088940856871438
 CanvasRenderer:
@@ -274,7 +274,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.yap.
+  m_text: "Doku: Doku, belirli bir i\u015Flevi yerine getirmek i\xE7in birlikte \xE7al\u0131\u015Fan
+    benzer h\xFCcrelerden olu\u015Fan bir gruptur. Bir organizmaya yap\u0131 ve i\u015Flev
+    sa\u011Flayan bir doku olu\u015Fturmak i\xE7in birden fazla h\xFCcrenin bir araya
+    geldi\u011Fi, h\xFCcrenin \xFCzerinde bir organizasyon seviyesidir. D\xF6rt ana
+    doku t\xFCr\xFC vard\u0131r: epitel, ba\u011F, kas ve sinir dokusu."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -301,15 +305,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
