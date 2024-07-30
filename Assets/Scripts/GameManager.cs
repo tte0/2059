@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> popups;
     private GameObject canvas;
     public bool waiting=true;
+    public bool ispopup=true;
 
     private int score;
     public int Score => score;
@@ -108,7 +109,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("New biggest tile: " + __biggestTileIndex);
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
-        GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
-        newPopup.name = "Popup";
+        if(Settings.ispopup){
+            GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
+            newPopup.name = "Popup";
+        }
+        else{
+            waiting=false;
+        }
     }
 }
