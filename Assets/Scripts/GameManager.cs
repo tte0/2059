@@ -1,3 +1,4 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,14 +15,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hiscoreText;
     [SerializeField] private List<GameObject> popups;
     private GameObject canvas;
-    public bool waiting=true;
+    private AudioSource audioSource;
+    public List<AudioClip> mergeSFX = new List<AudioClip>();
 
+    public bool waiting=true;
     public int score;
     public int Score => score;
     public int biggestTileIndex = 0;
+    public int biggestTileMergedIndex;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         canvas = GameObject.Find("Canvas");
         if (Instance != null) {
             DestroyImmediate(gameObject);
@@ -34,6 +39,31 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CheckScenes());
+    }
+
+    public void AddAudioFiles(){
+        audioSource = GetComponent<AudioSource>();
+        mergeSFX.Clear();
+        mergeSFX.Add(Resources.Load<AudioClip>("water-10"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-9"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-8"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-7"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-6"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-5"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-4"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-3"));
+    }
+
+    public void PlayMergeSound(){
+        Debug.Log("playing sound "+biggestTileMergedIndex);
+        audioSource.clip = mergeSFX[biggestTileMergedIndex-1];
+        audioSource.Play();
+        //Debug.Log("Audio Clip: " + audioSource.clip.name);
+        //Debug.Log("Audio Source: " + audioSource.name);
+        //Debug.Log("Volume: " + audioSource.volume);
+        //Debug.Log("Mute: " + audioSource.mute);
+        //Debug.Log("Playback: " + audioSource.isPlaying);
+
     }
 
     IEnumerator CheckScenes(){
@@ -53,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        AddAudioFiles();
         Debug.Log("new game");
         canvas = GameObject.Find("Canvas");
         board= canvas.transform.Find("Board").gameObject.GetComponent<TileBoard>();
@@ -128,7 +159,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void ManageNewBiggestTile(int __biggestTileIndex){
-        Debug.Log("New biggest tile: " + __biggestTileIndex);
+        //Debug.Log("New biggest tile: " + __biggestTileIndex);
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
         if(Settings.ispopup){
