@@ -9,7 +9,6 @@ public class TileBoard : MonoBehaviour
 
     private TileGrid grid;
     private List<Tile> tiles;
-    private int biggestTileIndex = 0;
 
     private void Awake()
     {
@@ -206,8 +205,8 @@ public class TileBoard : MonoBehaviour
                 if(tile.tile.state.number > mx)mx = tile.tile.state.number;
             }
         }
-        if(mx > biggestTileIndex){
-            biggestTileIndex = mx;
+        if(mx > GameManager.Instance.biggestTileIndex){
+            GameManager.Instance.biggestTileIndex = mx;
             GameManager.Instance.ManageNewBiggestTile(mx);
         }
         else{

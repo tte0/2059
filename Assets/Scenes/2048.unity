@@ -1928,7 +1928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1936,7 +1936,7 @@ PrefabInstance:
       objectReference: {fileID: 976074414}
     - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: quitWithExitCode
+      value: changeToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1446136795716210010, guid: 9ca447cd1516630b18418b7503109c60, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -2167,7 +2167,8 @@ MonoBehaviour:
   - {fileID: 590817339791297422, guid: b73b83756228bc0799cf38d1ff1ddcfb, type: 3}
   - {fileID: 3590592736484746632, guid: d215fc410d379d7768316cb0810e52e2, type: 3}
   waiting: 1
-  ispopup: 1
+  score: 0
+  biggestTileIndex: 0
 --- !u!4 &1601929140
 Transform:
   m_ObjectHideFlags: 0

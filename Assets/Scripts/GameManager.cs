@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,10 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> popups;
     private GameObject canvas;
     public bool waiting=true;
-    public bool ispopup=true;
 
-    private int score;
+    public int score;
     public int Score => score;
+    public int biggestTileIndex = 0;
 
     private void Awake()
     {
@@ -32,14 +33,35 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        NewGame();
+        StartCoroutine(CheckScenes());
     }
+
+    IEnumerator CheckScenes(){
+        string lastScene="null";
+        while(true){
+            yield return null;
+            Scene activeScene = SceneManager.GetActiveScene();
+            //Debug.Log("lastscene "+lastScene);
+            //Debug.Log("activeScene "+activeScene.name);
+            if(activeScene.name == lastScene)continue;
+            lastScene=activeScene.name;
+            if(activeScene.name == "2048"){
+                NewGame();
+            }
+        }
+    }  
 
     public void NewGame()
     {
+        Debug.Log("new game");
+        canvas = GameObject.Find("Canvas");
+        board= canvas.transform.Find("Board").gameObject.GetComponent<TileBoard>();
+        gameOver = canvas.transform.Find("Board").gameObject.transform.Find("Game Over").gameObject.GetComponent<CanvasGroup>();
+        GameManager.Instance.waiting=false;
+        GameManager.Instance.biggestTileIndex=0;
         // reset score
-        SetScore(0);
-        hiscoreText.text = LoadHiscore().ToString();
+        //SetScore(0);
+        //hiscoreText.text = LoadHiscore().ToString();
 
         // hide game over screen
         gameOver.alpha = 0f;
@@ -86,7 +108,7 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score)
     {
         this.score = score;
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
 
         SaveHiscore();
     }
