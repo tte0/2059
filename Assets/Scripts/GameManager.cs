@@ -1,7 +1,9 @@
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,14 +15,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hiscoreText;
     [SerializeField] private List<GameObject> popups;
     private GameObject canvas;
-    public bool waiting=true;
-    public bool ispopup=true;
+    private AudioSource audioSource;
+    public List<AudioClip> mergeSFX = new List<AudioClip>();
 
-    private int score;
+    public bool waiting=true;
+    public int score;
     public int Score => score;
+    public int biggestTileIndex = 0;
+    public int biggestTileMergedIndex;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         canvas = GameObject.Find("Canvas");
         if (Instance != null) {
             DestroyImmediate(gameObject);
@@ -32,14 +38,61 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        NewGame();
+        StartCoroutine(CheckScenes());
     }
+
+    public void AddAudioFiles(){
+        audioSource = GetComponent<AudioSource>();
+        mergeSFX.Clear();
+        mergeSFX.Add(Resources.Load<AudioClip>("water-10"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-9"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-8"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-7"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-6"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-5"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-4"));
+        mergeSFX.Add(Resources.Load<AudioClip>("water-3"));
+    }
+
+    public void PlayMergeSound(){
+        Debug.Log("playing sound "+biggestTileMergedIndex);
+        audioSource.clip = mergeSFX[biggestTileMergedIndex-1];
+        audioSource.Play();
+        //Debug.Log("Audio Clip: " + audioSource.clip.name);
+        //Debug.Log("Audio Source: " + audioSource.name);
+        //Debug.Log("Volume: " + audioSource.volume);
+        //Debug.Log("Mute: " + audioSource.mute);
+        //Debug.Log("Playback: " + audioSource.isPlaying);
+
+    }
+
+    IEnumerator CheckScenes(){
+        string lastScene="null";
+        while(true){
+            yield return null;
+            Scene activeScene = SceneManager.GetActiveScene();
+            //Debug.Log("lastscene "+lastScene);
+            //Debug.Log("activeScene "+activeScene.name);
+            if(activeScene.name == lastScene)continue;
+            lastScene=activeScene.name;
+            if(activeScene.name == "2048"){
+                NewGame();
+            }
+        }
+    }  
 
     public void NewGame()
     {
+        AddAudioFiles();
+        Debug.Log("new game");
+        canvas = GameObject.Find("Canvas");
+        board= canvas.transform.Find("Board").gameObject.GetComponent<TileBoard>();
+        gameOver = canvas.transform.Find("Board").gameObject.transform.Find("Game Over").gameObject.GetComponent<CanvasGroup>();
+        GameManager.Instance.waiting=false;
+        GameManager.Instance.biggestTileIndex=0;
         // reset score
-        SetScore(0);
-        hiscoreText.text = LoadHiscore().ToString();
+        //SetScore(0);
+        //hiscoreText.text = LoadHiscore().ToString();
 
         // hide game over screen
         gameOver.alpha = 0f;
@@ -86,7 +139,7 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score)
     {
         this.score = score;
-        scoreText.text = score.ToString();
+        //scoreText.text = score.ToString();
 
         SaveHiscore();
     }
@@ -106,7 +159,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void ManageNewBiggestTile(int __biggestTileIndex){
-        Debug.Log("New biggest tile: " + __biggestTileIndex);
+        //Debug.Log("New biggest tile: " + __biggestTileIndex);
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
         if(Settings.ispopup){

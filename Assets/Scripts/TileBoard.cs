@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ public class TileBoard : MonoBehaviour
 
     private TileGrid grid;
     private List<Tile> tiles;
-    private int biggestTileIndex = 0;
 
     private void Awake()
     {
@@ -46,6 +46,7 @@ public class TileBoard : MonoBehaviour
     {
         if (!GameManager.Instance.waiting)
         {
+            GameManager.Instance.biggestTileMergedIndex=0;
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
                 Move(Vector2Int.up, 0, 1, 1, 1);
             } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
@@ -121,6 +122,7 @@ public class TileBoard : MonoBehaviour
         a.Merge(b.cell);
 
         int index = Mathf.Clamp(IndexOf(b.state) + 1, 0, tileStates.Length - 1);
+        GameManager.Instance.biggestTileMergedIndex=Math.Max(GameManager.Instance.biggestTileMergedIndex,index);
         TileState newState = tileStates[index];
 
         b.SetState(newState);
@@ -142,23 +144,18 @@ public class TileBoard : MonoBehaviour
     private IEnumerator WaitForChanges()
     {
         GameManager.Instance.waiting = true;
+        if(GameManager.Instance.biggestTileMergedIndex>0){
+            GameManager.Instance.PlayMergeSound();
+        }
 
         yield return new WaitForSeconds(0.1f);
 
-        foreach (var tile in tiles) {
-            tile.locked = false;
-        }
+        foreach (var tile in tiles) tile.locked = false;
 
-        if (tiles.Count != grid.Size) {
-            CreateTile();
-        }
+        if (tiles.Count != grid.Size) CreateTile();
 
-        if (CheckForGameOver()) {
-            GameManager.Instance.GameOver();
-        }
-        else{
-            StartCoroutine(CheckForNewBiggestTile());
-        }
+        if (CheckForGameOver()) GameManager.Instance.GameOver();
+        else StartCoroutine(CheckForNewBiggestTile());
     }
 
     public bool CheckForGameOver()
@@ -206,8 +203,8 @@ public class TileBoard : MonoBehaviour
                 if(tile.tile.state.number > mx)mx = tile.tile.state.number;
             }
         }
-        if(mx > biggestTileIndex){
-            biggestTileIndex = mx;
+        if(mx > GameManager.Instance.biggestTileIndex){
+            GameManager.Instance.biggestTileIndex = mx;
             GameManager.Instance.ManageNewBiggestTile(mx);
         }
         else{
