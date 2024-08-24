@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 132951620}
   - component: {fileID: 132951619}
   - component: {fileID: 132951618}
+  - component: {fileID: 132951621}
   m_Layer: 5
   m_Name: New Game
   m_TagString: Untagged
@@ -526,9 +527,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1601929139}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NewGame
+      - m_Target: {fileID: 132951621}
+        m_TargetAssemblyTypeName: newgame, Assembly-CSharp
+        m_MethodName: _new_game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -576,6 +577,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132951616}
   m_CullTransparentMesh: 1
+--- !u!114 &132951621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132951616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a3ddcc09f7e185199a6d227fb45e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &238509760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2206,7 @@ MonoBehaviour:
   - {fileID: 3590592736484746632, guid: d215fc410d379d7768316cb0810e52e2, type: 3}
   mergeSFX: []
   waiting: 1
+  ispopupactive: 0
   score: 0
   biggestTileIndex: 0
   biggestTileMergedIndex: 0
@@ -2669,6 +2683,7 @@ GameObject:
   - component: {fileID: 1868971471}
   - component: {fileID: 1868971470}
   - component: {fileID: 1868971469}
+  - component: {fileID: 1868971472}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2740,9 +2755,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1601929139}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NewGame
+      - m_Target: {fileID: 1868971472}
+        m_TargetAssemblyTypeName: newgame, Assembly-CSharp
+        m_MethodName: _new_game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2790,6 +2805,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868971467}
   m_CullTransparentMesh: 1
+--- !u!114 &1868971472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868971467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a3ddcc09f7e185199a6d227fb45e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1897888681
 GameObject:
   m_ObjectHideFlags: 0
