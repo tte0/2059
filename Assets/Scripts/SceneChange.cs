@@ -12,7 +12,19 @@ public class SceneChange : MonoBehaviour
     private string _sceneGame="2048";
     
     public void changeToMainMenu(){
-        SceneManager.LoadScene(_sceneMain);
+        if(GameManager.Instance.ispopupactive){
+            GameObject popup = GameObject.Find("Popup");
+            if (popup != null){
+                Popup popupScript = popup.GetComponent<Popup>();
+                popupScript.ClosePopup();
+            }
+            else{
+                Debug.Log("no popup while esc");
+            }
+        }
+        else{
+            SceneManager.LoadScene(_sceneMain);
+        }
     }
     public void changeToSettings(){
         SceneManager.LoadScene(_sceneSettings);

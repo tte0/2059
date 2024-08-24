@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public List<AudioClip> mergeSFX = new List<AudioClip>();
 
     public bool waiting=true;
+    public bool ispopupactive=false;
     public int score;
     public int Score => score;
     public int biggestTileIndex = 0;
@@ -163,6 +164,7 @@ public class GameManager : MonoBehaviour
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
         if(Settings.ispopup){
+            ispopupactive=true;
             GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
             newPopup.name = "Popup";
         }

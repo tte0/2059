@@ -620,7 +620,6 @@ GameObject:
   m_Component:
   - component: {fileID: 952809036}
   - component: {fileID: 952809035}
-  - component: {fileID: 952809034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -628,14 +627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &952809034
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952809033}
-  m_Enabled: 1
 --- !u!20 &952809035
 Camera:
   m_ObjectHideFlags: 0
@@ -736,8 +727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: -500}
-  m_SizeDelta: {x: 800, y: 75}
+  m_AnchoredPosition: {x: 575, y: -500}
+  m_SizeDelta: {x: 770, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137727731
 MonoBehaviour:
@@ -759,7 +750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bu oyun GNU General Public License version 3 alt\u0131nda yay\u0131nlanmaktad\u0131r.
+  m_text: "Bu oyun GNU Genel Kamu Lisans\u0131 versiyon 3 alt\u0131nda yay\u0131nlanmaktad\u0131r.
     (GPLv3). Ayr\u0131nt\u0131lar i\xE7in https://www.gnu.org/licenses/gpl-3.0 bak\u0131n."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
