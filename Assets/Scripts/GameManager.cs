@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public bool ispopupactive=false;
     public int score;
     public int Score => score;
-    public int biggestTileIndex = 0;
+    public int biggestTileIndex = -1;
     public int biggestTileMergedIndex;
 
     private void Awake()
@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        AddAudioFiles();
         Debug.Log("new game");
+        AddAudioFiles();
         canvas = GameObject.Find("Canvas");
         board= canvas.transform.Find("Board").gameObject.GetComponent<TileBoard>();
         gameOver = canvas.transform.Find("Board").gameObject.transform.Find("Game Over").gameObject.GetComponent<CanvasGroup>();
@@ -99,11 +99,14 @@ public class GameManager : MonoBehaviour
         gameOver.alpha = 0f;
         gameOver.interactable = false;
 
+        biggestTileIndex = -1;
+
         // update board state
         board.ClearBoard();
         board.CreateTile();
         board.CreateTile();
         board.enabled = true;
+        StartCoroutine(board.CheckForNewBiggestTile());
     }
 
     public void GameOver()
