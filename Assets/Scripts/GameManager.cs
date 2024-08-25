@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayMergeSound(){
-        Debug.Log("playing sound "+biggestTileMergedIndex);
+        //Debug.Log("playing sound "+biggestTileMergedIndex);
         audioSource.clip = mergeSFX[biggestTileMergedIndex-1];
         audioSource.Play();
         //Debug.Log("Audio Clip: " + audioSource.clip.name);
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        Debug.Log("new game");
+        //Debug.Log("new game");
         AddAudioFiles();
         canvas = GameObject.Find("Canvas");
         board= canvas.transform.Find("Board").gameObject.GetComponent<TileBoard>();
@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("New biggest tile: " + __biggestTileIndex);
         int popupIndex = (int)(Mathf.Log(__biggestTileIndex) / Mathf.Log(2)) - 1;
         //Debug.Log("Popup index: " + popupIndex);
-        if(Settings.ispopup){
+        if(Settings.Instance.ispopup){  
             ispopupactive=true;
             GameObject newPopup = Instantiate(popups[popupIndex], canvas.transform);
             newPopup.name = "Popup";

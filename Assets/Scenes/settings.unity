@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 419938005}
   - component: {fileID: 419938004}
   - component: {fileID: 419938003}
+  - component: {fileID: 419938006}
   m_Layer: 5
   m_Name: disablepopup
   m_TagString: Untagged
@@ -206,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1913974882}
-        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: setPopupSetting
+      - m_Target: {fileID: 419938006}
+        m_TargetAssemblyTypeName: configureSeetings, Assembly-CSharp
+        m_MethodName: _setpopup
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,6 +257,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419938001}
   m_CullTransparentMesh: 1
+--- !u!114 &419938006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419938001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362feb3b5dc7fedc8aa6a394f6251783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &537401026
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +634,7 @@ GameObject:
   - component: {fileID: 1172620394}
   - component: {fileID: 1172620393}
   - component: {fileID: 1172620392}
+  - component: {fileID: 1172620395}
   m_Layer: 5
   m_Name: enablepopup
   m_TagString: Untagged
@@ -692,9 +706,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1913974882}
-        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: setPopupSetting
+      - m_Target: {fileID: 1172620395}
+        m_TargetAssemblyTypeName: configureSeetings, Assembly-CSharp
+        m_MethodName: _setpopup
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -742,6 +756,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172620390}
   m_CullTransparentMesh: 1
+--- !u!114 &1172620395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172620390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362feb3b5dc7fedc8aa6a394f6251783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328405199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1147,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913974881}
-  - component: {fileID: 1913974882}
   m_Layer: 5
   m_Name: settings
   m_TagString: Untagged
@@ -1152,18 +1177,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1913974882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913974880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985187e01528d6b9a87838a135720492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2106617587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2832928076649660212, guid: 9ca447cd1516630b18418b7503109c60, type: 3}

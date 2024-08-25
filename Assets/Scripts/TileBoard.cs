@@ -192,7 +192,7 @@ public class TileBoard : MonoBehaviour
     }
 
     public IEnumerator CheckForNewBiggestTile(){
-        Debug.Log("checking CheckForNewBiggestTile");
+        //Debug.Log("checking CheckForNewBiggestTile");
         //after every move check if the biggest tile has changed
         yield return new WaitForSeconds(0.1f);
         int mx=0;
